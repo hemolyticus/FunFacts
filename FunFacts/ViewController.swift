@@ -11,15 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var funFactLabel: UILabel!
-    let facts: [String] = ["Ants stretch when they wake up in the morning", "Ostriches can run faster than horses"]
+    let factProvider = FactProvider()
     @IBAction func showFact() {
+        funFactLabel.text = factProvider.facts[1]
         
-        funFactLabel.text = facts[1]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        funFactLabel.text = facts[0]
+       funFactLabel.text = factProvider.facts[0]
     }
 
     override func didReceiveMemoryWarning() {
