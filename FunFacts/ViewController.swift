@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var funFactButton: UIButton!
     @IBOutlet weak var funFactLabel: UILabel!
     let factProvider = FactProvider()
+    let colorProvider = BackgroundColorProvider()
     @IBAction func showFact() {
         funFactLabel.text = factProvider.randomFact()
-        let newColor = UIColor(red: 223/255.0, green: 86/255.0, blue: 94/255.0, alpha: 1.0)
-        self.view.backgroundColor = newColor
-        
+        let randomColor = colorProvider.randomColor()
+        self.view.backgroundColor = randomColor
+        funFactButton.backgroundColor = randomColor
+      
     }
     
     override func viewDidLoad() {
