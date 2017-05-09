@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     let factProvider = FactProvider()
     @IBAction func showFact() {
         funFactLabel.text = factProvider.randomFact()
+        let newColor = UIColor(red: 223/255.0, green: 86/255.0, blue: 94/255.0, alpha: 1.0)
+        self.view.backgroundColor = newColor
         
     }
     
